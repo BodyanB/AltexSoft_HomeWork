@@ -18,8 +18,7 @@ namespace HomeWork
                                    IEnumerable<string> currencies)
         {
             decimal fullPrice = default;
-
-            // Your solution supposed to be here.
+         
             if (!(destinations.Count() == clients.Count() && destinations.Count() == prices.Count() && destinations.Count() == currencies.Count()))
             {
                 Console.WriteLine("Incorect input");
@@ -32,7 +31,7 @@ namespace HomeWork
 
                 if (currencies.ElementAt(i) == "EUR")
                 {
-                    discountPrice /= 1.19m;
+                    discountPrice /= 0.84m;
                 }
                 if (Regex.IsMatch(destinations.ElementAt(i), "Wayne Street"))
                 {
