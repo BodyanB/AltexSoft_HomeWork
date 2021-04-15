@@ -10,6 +10,7 @@ namespace HomeWork
             var result = homework.InvokePriceCalculatiion();
 
             Console.WriteLine(result);
+            Console.WriteLine("Exit");
             Console.ReadLine();
         }
     }
