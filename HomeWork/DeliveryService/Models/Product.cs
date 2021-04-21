@@ -12,6 +12,6 @@ namespace DeliveryService.Models
         public string Description { get; set; }
         public string Price { get; set; }
         public int CategoryId { get; set; }
-        public int SallerId { get; set; }
+        public int SellerId { get; set; }
     }
 }

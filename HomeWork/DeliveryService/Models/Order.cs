@@ -10,6 +10,9 @@ namespace DeliveryService.Models
     {
         public int BuyerId { get; set; }
         public IList<Product> Products { get; set; }
-        
+        public Order()
+        {
+            Products = new List<Product>();
+        }
     }
 }

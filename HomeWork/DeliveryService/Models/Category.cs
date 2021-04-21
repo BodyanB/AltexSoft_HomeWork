@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeliveryService.Models
 {
-    public class Categorys : GoodsId
+    public class Category : GoodsId
     {
         public string Name { get; set; }
     }
