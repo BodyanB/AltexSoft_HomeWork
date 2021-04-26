@@ -1,4 +1,6 @@
 ﻿using System;
+using DeliveryService.Controller;
+using DeliveryService.Models;
 
 namespace DeliveryService
 {
@@ -7,6 +9,9 @@ namespace DeliveryService
         static void Main(string[] args)
         {
             Console.WriteLine("Hello in Service!");
+            var navigationController = new NavigationController();
+
+            navigationController.RunMenu();
         }
     }
 }

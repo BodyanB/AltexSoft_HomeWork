@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeliveryService.Models
 {
-    public class Buyer : GoodsId
+    public class Buyer : GoodsId, IUser
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
