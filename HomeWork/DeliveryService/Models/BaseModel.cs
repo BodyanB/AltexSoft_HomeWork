@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DeliveryService.Models
 {
-    interface IUser
+    public class BaseModel 
     {
+        public int Id { get; set; }
+       
     }
 }

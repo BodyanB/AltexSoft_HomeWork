@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DeliveryService.Models;
 
-namespace DeliveryService.Models
+namespace DeliveryService.Interfaces
 {
-   public class GoodsId
+    interface IBuyerController
     {
-        public int Id { get; set; }
+        void AddBuyer(Buyer buyer);
     }
 }
