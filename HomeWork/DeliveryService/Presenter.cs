@@ -10,7 +10,7 @@ using DeliveryService.Models;
 
 namespace DeliveryService
 {
-    class Presenter : IPresenter
+     public class Presenter : IPresenter
     {
         private readonly IProductController productController;
         private readonly IBuyerController buyerController;

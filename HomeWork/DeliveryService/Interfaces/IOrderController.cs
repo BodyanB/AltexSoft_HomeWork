@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeliveryService.Interfaces
 {
-    interface IOrderController
+    public interface IOrderController
     {
         void AddOrder(Order order);
     }

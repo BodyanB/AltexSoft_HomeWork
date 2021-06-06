@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeliveryService.Interfaces
 {
-    interface IPresenter
+    public interface IPresenter
     {
         void ShowMenu();
     }

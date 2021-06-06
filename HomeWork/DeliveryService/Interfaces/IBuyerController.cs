@@ -7,7 +7,7 @@ using DeliveryService.Models;
 
 namespace DeliveryService.Interfaces
 {
-    interface IBuyerController
+    public interface IBuyerController
     {
         void AddBuyer(Buyer buyer);
     }

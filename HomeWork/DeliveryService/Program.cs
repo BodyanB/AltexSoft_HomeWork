@@ -5,7 +5,7 @@ using DeliveryService.Data;
 using DeliveryService.Models;
 namespace DeliveryService
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

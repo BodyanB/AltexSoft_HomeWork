@@ -8,7 +8,7 @@ using DeliveryService.Models;
 
 namespace DeliveryService.Controller
 {
-    class ProductController : IProductController
+    public class ProductController : IProductController
     {
         private readonly IStoreContext storeContext;
 

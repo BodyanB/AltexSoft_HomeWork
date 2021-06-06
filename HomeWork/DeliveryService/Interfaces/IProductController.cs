@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace DeliveryService.Interfaces
 {
-    interface IProductController
+    public interface IProductController
     {
         IList<Product> GetProducts();
         void AddProduct(Product product);
