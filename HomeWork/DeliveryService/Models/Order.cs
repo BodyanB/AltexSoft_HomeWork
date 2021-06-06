@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace DeliveryService.Models
 {
-    public class Order : GoodsId
+    public class Order : BaseModel
     {
         public int BuyerId { get; set; }
         public IList<Product> Products { get; set; }
-        public Order()
+        public decimal Price { get; set; }
+        public string Address { get; set; }
+
+        public Order(string address, List<Product> products)
         {
-            Products = new List<Product>();
+            Products = products;
+            Address = address;
         }
     }
 }
