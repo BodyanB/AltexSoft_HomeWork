@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DeliveryService.Controller;
 using DeliveryService.Interfaces;
 using DeliveryService.Models;
-
+using DeliveryService.Validation;
 
 namespace DeliveryService
 {
@@ -91,11 +91,65 @@ namespace DeliveryService
                     goToOrder = true;
                 }
             }
-            Console.WriteLine("Для оформления заказа  введите адресс доставки:");
-            var inputAdress = Console.ReadLine();
+            Console.WriteLine("Для оформления заказа  введите адресс доставки, свой email и номер телефона.");
+
+            RegisterUser();
+            string inputAdress;
+            while (true)
+            {
+                Console.WriteLine("Введите адрес доставки:");
+                inputAdress = Console.ReadLine();
+                if (inputAdress.IsAddress())
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Адрес не соответствует формату. Введите еще раз.");
+                    Console.WriteLine("Пример: улица Серебряная, д.23, кв.89");
+                }
+            }
             var order = new Order(inputAdress, productsToOrder);
             orderController.AddOrder(order);
             Console.WriteLine("Заказ успешно сделан!");
+        }
+
+        public void RegisterUser()
+        {
+            string email;
+            string phoneNumber;
+            while (true)
+            {
+                Console.WriteLine("Введите ваш Email:");
+                email = Console.ReadLine();
+                if (email.IsEmail())
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Email не соответствует формату. Введите еще раз.");
+                    Console.WriteLine("Пример: example@gmail.com");
+                }
+            }
+            Console.WriteLine("Введите ваше имя:");
+            var name = Console.ReadLine();
+            while (true)
+            {
+                Console.WriteLine("Введите ваш номер телефона:");
+                phoneNumber = Console.ReadLine();
+                if (phoneNumber.IsPhoneNumber())
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Номер телефона не соответствует формату. Попробуйте еще раз.");
+                    Console.WriteLine("Пример: +380952223388");
+                }
+            }
+            var buyer = new Buyer(email, name, phoneNumber);
+            buyerController.AddBuyer(buyer);
         }
 
         public void CreateProduct()
