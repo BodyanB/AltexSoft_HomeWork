@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DeliveryService.Controller;
 using DeliveryService.Interfaces;
 using DeliveryService.Models;
-using DeliveryService.Samples;
+using DeliveryService.Expansion;
 
 namespace DeliveryService
 {
@@ -99,7 +99,7 @@ namespace DeliveryService
             {
                 Console.WriteLine("Введите адрес доставки:");
                 inputAdress = Console.ReadLine();
-                if (inputAdress.CheckValidAddress())
+                if (inputAdress.IsAddress())
                 {
                     break;
                 }
@@ -122,7 +122,7 @@ namespace DeliveryService
             {
                 Console.WriteLine("Введите ваш Email:");
                 email = Console.ReadLine();
-                if (email.CheckValidEmail())
+                if (email.IsEmail())
                 {
                     break;
                 }
@@ -138,7 +138,7 @@ namespace DeliveryService
             {
                 Console.WriteLine("Введите ваш номер телефона:");
                 phoneNumber = Console.ReadLine();
-                if (phoneNumber.CheckValidPhoneNumber())
+                if (phoneNumber.IsPhoneNumber())
                 {
                     break;
                 }
