@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
-namespace DeliveryService.Expansion
+namespace DeliveryService.Validation
 {
-  public static  class InputData
+  public static  class InputDataExtensions
     {
         public static bool IsPhoneNumber(this string number)
         {
