@@ -10,17 +10,24 @@ namespace DeliveryService.Controller
 {
     public class OrderController : IOrderController
     {
-        private readonly IStoreContext storeContext;
+        private readonly IStoreContext _storeContext;
+        private readonly ILogger _logger;
 
-        public OrderController(IStoreContext storeContext)
+        public OrderController(IStoreContext storeContext, ILogger logger)
         {
-            this.storeContext = storeContext;
+            _storeContext = storeContext;
+            _logger = logger;
         }
         public void AddOrder(Order order)
         {
-            order.Id = storeContext.Orders.Count > 0 ? storeContext.Orders.Max(x => x.Id) + 1 : 1;
+            order.Id = _storeContext.Orders.Count > 0 ? _storeContext.Orders.Max(x => x.Id) + 1 : 1;
 
-            storeContext.Orders.Add(order);
+            _storeContext.Orders.Add(order);
+            if (_storeContext.Buyers is not null)
+            {
+                _logger.Log($"Пользователи добавили новый заказ (ID: {order.Id})");
+            }
+            
         }
     }
 }
