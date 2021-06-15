@@ -13,8 +13,8 @@ namespace DeliveryService
         {
             Console.WriteLine("Hello in Service!");
 
-   
-            var context = new StoreContext();
+            var fileManager = new JsonManager();
+            var context = new StoreContext(fileManager);
             var logger = new Logger();
             var productController = new ProductController(context, logger);
             var buyerController = new BuyerController(context, logger);
@@ -26,7 +26,7 @@ namespace DeliveryService
 
             var presenter = new Presenter(productController, buyerController, orderController);
             presenter.ShowMenu();
-            
+            context.Save();
         }
     }
 }
