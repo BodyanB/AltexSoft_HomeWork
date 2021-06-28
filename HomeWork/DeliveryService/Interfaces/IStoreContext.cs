@@ -12,5 +12,6 @@ namespace DeliveryService.Interfaces
         IList<Product> Products { get; set; }
         IList<Buyer> Buyers { get; set; }
         IList<Order> Orders { get; set; }
+        void Save();
     }
 }

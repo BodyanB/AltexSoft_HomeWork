@@ -10,18 +10,21 @@ namespace DeliveryService.Controller
     public class BuyerController : IBuyerController
     {
               
-            private readonly IStoreContext storeContext;
+            private readonly IStoreContext _storeContext;
+            private readonly ILogger _logger;
 
-            public BuyerController(IStoreContext storeContext)
+        public BuyerController(IStoreContext storeContext, ILogger logger)
             {
-                this.storeContext = storeContext;
-            }
+                _storeContext = storeContext;
+                _logger = logger;
+        }
 
         public void AddBuyer(Buyer buyer)
         {
-            buyer.Id = storeContext.Buyers.Count > 0 ? storeContext.Buyers.Max(x => x.Id) + 1 : 1;
+            buyer.Id = _storeContext.Buyers.Count > 0 ? _storeContext.Buyers.Max(x => x.Id) + 1 : 1;
 
-            storeContext.Buyers.Add(buyer);
+            _storeContext.Buyers.Add(buyer);
+            _logger.Log($"Создан новый пользователь ({buyer.Email}).");
         }
       
     }
